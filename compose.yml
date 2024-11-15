@@ -1,0 +1,22 @@
+version: '2'
+services:
+  backend:
+    container_name: backend
+    image: houriem/houssam:demo
+    pull_policy: always
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
+
+  frontend:
+    container_name: frontend
+    image: houriem/houssam:kata-front
+    pull_policy: always
+    ports:
+      - '3000:3000'
+    expose:
+      - '3000'
+    depends_on:
+      - backend
+   
